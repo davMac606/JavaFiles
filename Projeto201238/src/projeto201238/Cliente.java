@@ -6,9 +6,16 @@ public class Cliente extends Pessoa implements IPessoa {
     private String nome;
     private int idade;
     private int codigo;
-    private String email;
-    private float telefone;
+    private int pedidos;
+    private int telefone;
     
+      public Cliente(String nome, int idade,int pedidos, int codigo, int telefone) {
+        this.nome = nome;
+        this.idade = idade;
+        this.pedidos = pedidos;
+        this.codigo = codigo;
+        this.telefone = telefone;
+    }
     
     public String getNome() {
         return nome;
@@ -34,27 +41,27 @@ public class Cliente extends Pessoa implements IPessoa {
         this.codigo = codigo;
     }
 
-    public String getEmail() {
-        return email;
+    public int getPedidos() {
+        return pedidos;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setPedidos(int pedidos) {
+        this.pedidos = pedidos;
     }
 
-    public float getTelefone() {
+    public int getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(float telefone) {
+    public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
     @Override
     public void exibir() {
         System.out.println(nome + "\n");
         System.out.println(idade + "\n");
+        System.out.println(pedidos + "\n");
         System.out.println(codigo + "\n");
-        System.out.println(email + "\n");
         System.out.println(telefone + "\n");
     }
     
