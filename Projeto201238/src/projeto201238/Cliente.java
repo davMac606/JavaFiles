@@ -9,14 +9,6 @@ public class Cliente extends Pessoa implements IPessoa {
     private int pedidos;
     private int telefone;
     
-      public Cliente(String nome, int idade,int pedidos, int codigo, int telefone) {
-        this.nome = nome;
-        this.idade = idade;
-        this.pedidos = pedidos;
-        this.codigo = codigo;
-        this.telefone = telefone;
-    }
-    
     public String getNome() {
         return nome;
     }
@@ -81,5 +73,7 @@ public class Cliente extends Pessoa implements IPessoa {
     public void quantidade() {
         System.out.println("Aqui será exibida a quantidade de clientes");
     }
+
+    
 
 }
