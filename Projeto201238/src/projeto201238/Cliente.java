@@ -50,11 +50,10 @@ public class Cliente extends Pessoa implements IPessoa {
     }
     @Override
     public void exibir() {
-        System.out.println(nome + "\n");
-        System.out.println(idade + "\n");
-        System.out.println(pedidos + "\n");
-        System.out.println(codigo + "\n");
-        System.out.println(telefone + "\n");
+        System.out.println("Nome: " + nome + "\nIdade: " + idade + "\nCódigo: " + codigo + "\nPedidos: " + pedidos + "\n");
+       
+
+
     }
     
     @Override
