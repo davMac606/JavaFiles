@@ -48,6 +48,10 @@ public class Cliente extends Pessoa implements IPessoa {
         this.telefone = telefone;
     }
 
+    public Cliente() {
+        this.idade = 0;
+        this.telefone = -1;
+    }
     @Override
     public void exibir() {
         System.out.println("Nome: " + nome + "\nIdade: " + idade + "\nCódigo: " + codigo + "\nPedidos: " + pedidos

@@ -6,7 +6,7 @@ public class Produto {
     private int codigo;
     private double preco;
     private String autor;
-    private String estilo;
+    private String tipo;
 
     public String getNome() {
         return nome;
@@ -48,18 +48,18 @@ public class Produto {
         this.autor = autor;
     }
 
-    public String getEstilo() {
-        return estilo;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setEstilo(String estilo) {
-        this.estilo = estilo;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public void exibir() {
         System.out.println("Nome do produto: " + nome + "\nDescrição do Produto: " + descricao + "\nAutor do produto: "
-                + autor + "\nCódigo do produto: " + codigo + "\nPreço do produto: " + preco + "\nEstilo do produto: "
-                + estilo);
+                + autor + "\nCódigo do produto: " + codigo + "\nPreço do produto: " + preco + "\nTipo do produto: "
+                + tipo);
     }
 
     public void maiorPreco() {
