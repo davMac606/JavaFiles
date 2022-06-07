@@ -1,14 +1,13 @@
 
 package projeto201238;
 
-
 public class Cliente extends Pessoa implements IPessoa {
     private String nome;
     private int idade;
     private int codigo;
     private int pedidos;
     private int telefone;
-    
+
     public String getNome() {
         return nome;
     }
@@ -48,18 +47,18 @@ public class Cliente extends Pessoa implements IPessoa {
     public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
+
     @Override
     public void exibir() {
-        System.out.println("Nome: " + nome + "\nIdade: " + idade + "\nCódigo: " + codigo + "\nPedidos: " + pedidos + "\n");
-       
-
+        System.out.println("Nome: " + nome + "\nIdade: " + idade + "\nCódigo: " + codigo + "\nPedidos: " + pedidos
+                + "\n" + "\nTelefone: " + telefone);
 
     }
-    
 
     public void maior() {
         System.out.println("Aqui será exibido o cliente mais velho");
     }
+
     public void menor() {
         System.out.println("Aqui será exibido o cliente mais novo");
     }
@@ -71,7 +70,5 @@ public class Cliente extends Pessoa implements IPessoa {
     public void quantidade() {
         System.out.println("Aqui será exibida a quantidade de clientes");
     }
-
-    
 
 }
