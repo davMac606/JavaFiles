@@ -56,19 +56,18 @@ public class Cliente extends Pessoa implements IPessoa {
 
     }
     
-    @Override
+
     public void maior() {
         System.out.println("Aqui será exibido o cliente mais velho");
     }
-    @Override
     public void menor() {
         System.out.println("Aqui será exibido o cliente mais novo");
     }
-    @Override
+
     public void media() {
         System.out.println("Aqui será exibida a média de idade dos clientes");
     }
-    @Override
+
     public void quantidade() {
         System.out.println("Aqui será exibida a quantidade de clientes");
     }
