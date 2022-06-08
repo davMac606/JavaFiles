@@ -44,95 +44,95 @@ public class Projeto201238 {
 					+ "-> 20 - Exibir o produto mais barato\n"
 					+ "-> 21 - Exibir media de precos\n"
 					+ "-> 22 - Exibir quantidade de produtos acima da media de preco\n"
-               + "->23 - Sobre o projeto\n");
+					+ "-> 23 - Sobre o projeto\n");
 
 			opUsuario = tec.nextInt();
 
 			switch (opUsuario) {
-			case 0:
-         System.out.println("Até logo!");
-				System.exit(opUsuario);
-				break;
-			case 1:
-				cadastrarCliente();
-				break;
-			case 2:
-				excluirCliente();
-				break;
-			case 3:
-				for (Cliente c : listaClientes) {
-					c.exibir();
-					System.out.println("Indice do cliente: " + listaClientes.indexOf(c) + "\n");
-				}
-				break;
-			case 4:
-				cadastrarFuncionario();
-				break;
-			case 5:
-				excluirFuncionario();
-				break;
-			case 6:
-				for (Funcionario f : listaFuncionarios) {
-					f.exibir();
-					System.out.println("Indice do funcionario: " + listaFuncionarios.indexOf(f) + "\n");
-				}
-				break;
-			case 7:
-				cadastrarProduto();
-				break;
-			case 8:
-				excluirProduto();
-				break;
-			case 9:
-				for (Produto p : listaProdutos) {
-					p.exibir();
-					System.out.println("Indice do produto: " + listaProdutos.indexOf(p) + "\n");
-				}
-				break;
-			case 10:
-				procurarCliente();
-				break;
-			case 11:
-				procurarProdutoDescricao();
-				break;
-			case 12:
-				procurarProdutoPreco();
-				break;
-			case 13:
-				procurarProdutoTipo();
-				break;
-			case 14:
-				exibeClienteMaisVelho();
-				break;
-			case 15:
-				exibeClienteMaisJovem();
-				break;
-			case 16:
-				exibeClienteMaisSessenta();
-				break;
-			case 17:
-				exibeClienteAbaixoDezoito();
-				break;
-			case 18:
-				exibeMediaIdadeClientes();
-				break;
-			case 19:
-				exibeProdutoMaisCaro();
-				break;
-			case 20:
-				exibeProdutoMaisBarato();
-				break;
-			case 21:
-				exibirMediaPrecos();
-				break;
-			case 22:
-				exibirQtdProdutosAcimaMedia();
-				break;
-            case 23:
-            System.out.println("Projeto desenvolvido por Davi Andrade Macedo. RA - 201238");
-			default:
-				System.out.println("Opcao invalida !!");
-				break;
+				case 0:
+					System.out.println("Até logo!");
+					System.exit(opUsuario);
+					break;
+				case 1:
+					cadastrarCliente();
+					break;
+				case 2:
+					excluirCliente();
+					break;
+				case 3:
+					for (Cliente c : listaClientes) {
+						c.exibir();
+						System.out.println("Indice do cliente: " + listaClientes.indexOf(c) + "\n");
+					}
+					break;
+				case 4:
+					cadastrarFuncionario();
+					break;
+				case 5:
+					excluirFuncionario();
+					break;
+				case 6:
+					for (Funcionario f : listaFuncionarios) {
+						f.exibir();
+						System.out.println("Indice do funcionario: " + listaFuncionarios.indexOf(f) + "\n");
+					}
+					break;
+				case 7:
+					cadastrarProduto();
+					break;
+				case 8:
+					excluirProduto();
+					break;
+				case 9:
+					for (Produto p : listaProdutos) {
+						p.exibir();
+						System.out.println("Indice do produto: " + listaProdutos.indexOf(p) + "\n");
+					}
+					break;
+				case 10:
+					procurarCliente();
+					break;
+				case 11:
+					procurarProdutoDescricao();
+					break;
+				case 12:
+					procurarProdutoPreco();
+					break;
+				case 13:
+					procurarProdutoTipo();
+					break;
+				case 14:
+					exibeClienteMaisVelho();
+					break;
+				case 15:
+					exibeClienteMaisJovem();
+					break;
+				case 16:
+					exibeClienteMaisSessenta();
+					break;
+				case 17:
+					exibeClienteAbaixoDezoito();
+					break;
+				case 18:
+					exibeMediaIdadeClientes();
+					break;
+				case 19:
+					exibeProdutoMaisCaro();
+					break;
+				case 20:
+					exibeProdutoMaisBarato();
+					break;
+				case 21:
+					exibirMediaPrecos();
+					break;
+				case 22:
+					exibirQtdProdutosAcimaMedia();
+					break;
+				case 23:
+					System.out.println("Projeto desenvolvido por Davi Andrade Macedo. RA - 201238");
+				default:
+					System.out.println("Opcao invalida !!");
+					break;
 			}
 		}
 	}
@@ -151,7 +151,7 @@ public class Projeto201238 {
 				qtdProdutosAcimaMedia++;
 			}
 		}
-		
+
 		System.out.println("A Quantidade de produtos acima da media e: " + qtdProdutosAcimaMedia);
 	}
 
