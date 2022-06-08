@@ -1,78 +1,79 @@
 
 package projeto201238;
 
+
 public class Cliente extends Pessoa implements IPessoa {
-    private String nome;
-    private int idade;
-    private int codigo;
-    private int pedidos;
-    private int telefone;
+	private String nome;
+	private int idade;
+	private int codigo;
+	private int pedidos;
+	private int telefone;
 
-    public String getNome() {
-        return nome;
-    }
+	public Cliente() {
+		this.idade = -1;
+		this.codigo = -1;
+		this.pedidos = -1;
+		this.telefone = -1;
+	}
+	
+	@Override
+	public void exibir() {
+		System.out.println("\nNome do Cliente: " + this.nome + "\nIdade do cliente: " + this.idade + "\nCodigo: "
+				+ this.codigo + "\nPedidos do Cliente: " + this.pedidos + "\nTelefone: " + this.telefone);
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public String getNome() {
+		return nome;
+	}
 
-    public int getIdade() {
-        return idade;
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    public void setIdade(int idade) {
-        this.idade = idade;
-    }
+	public int getIdade() {
+		return idade;
+	}
 
-    public int getCodigo() {
-        return codigo;
-    }
+	public void setIdade(int idade) {
+		if (idade < 0)
+			throw new IllegalArgumentException("Idade invalida !!");
+		else 
+			this.idade = idade;
+	}
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
+	public int getCodigo() {
+		return codigo;
+	}
 
-    public int getPedidos() {
-        return pedidos;
-    }
+	public void setCodigo(int codigo) {
+		if (codigo < 0)
+			throw new IllegalArgumentException("Codigo invalido !!");
+		else
+			this.codigo = codigo;
+	}
 
-    public void setPedidos(int pedidos) {
-        this.pedidos = pedidos;
-    }
+	public int getPedidos() {
+		return pedidos;
+	}
 
-    public int getTelefone() {
-        return telefone;
-    }
+	public void setPedidos(int pedidos) {
+		if (pedidos < 0)
+			throw new IllegalArgumentException("Codigo invalido !!");
+		else
+			this.pedidos = pedidos;
+	}
 
-    public void setTelefone(int telefone) {
-        this.telefone = telefone;
-    }
+	public int getTelefone() {
+		return telefone;
+	}
 
-    public Cliente() {
-        this.idade = 0;
-        this.telefone = -1;
-    }
-    @Override
-    public void exibir() {
-        System.out.println("Nome: " + nome + "\nIdade: " + idade + "\nCódigo: " + codigo + "\nPedidos: " + pedidos
-                + "\n" + "\nTelefone: " + telefone);
+	public void setTelefone(int telefone) {
+		if (telefone < 0)
+			throw new IllegalArgumentException("Codigo invalido !!");
+		else
+			this.telefone = telefone;
+	}
 
-    }
-
-    public void maior() {
-        System.out.println("Aqui será exibido o cliente mais velho");
-    }
-
-    public void menor() {
-        System.out.println("Aqui será exibido o cliente mais novo");
-    }
-
-    public void media() {
-        System.out.println("Aqui será exibida a média de idade dos clientes");
-    }
-
-    public void quantidade() {
-        System.out.println("Aqui será exibida a quantidade de clientes");
-    }
-
+	
 }
+
