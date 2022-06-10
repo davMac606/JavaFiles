@@ -6,7 +6,7 @@ import java.util.InputMismatchException;
 public class Funcionario extends Pessoa implements IPessoa {
     private String nome;
     private int idade;
-    private String estiloArte;
+    private String descFunc;
     private int codigo;
     private double salario;
     
@@ -18,8 +18,8 @@ public class Funcionario extends Pessoa implements IPessoa {
     
 	@Override
 	public void exibir() {
-		System.out.println("\nNome do Funcionario: " + this.nome + "\nIdade do Funcionario: " + this.idade + "\nCodigo: "
-				+ this.codigo + "\nEstilo de Arte: " + this.estiloArte + "\nSalario: " + this.salario);
+		System.out.println("\nNome do Funcionário: " + this.nome + "\nIdade do funcionário: " + this.idade + "\nCódigo: "
+				+ this.codigo + "\nBreve descrição do funcionário: " + this.descFunc + "\nSalario: " + this.salario);
 	}
 
 	public String getNome() {
@@ -36,18 +36,18 @@ public class Funcionario extends Pessoa implements IPessoa {
 
 	public void setIdade(int idade) {
 		if (idade < 0)
-			throw new IllegalArgumentException("Idade invalida !!");
+			throw new IllegalArgumentException("Idade inválida !!");
 		else 
 			this.idade = idade;
 	}
 
-	public String getEstiloArte() {
-		return estiloArte;
+	public String getDescFunc() {
+		return descFunc;
 	}
 
-	public void setEstiloArte(String estiloArte) {
-		if (estiloArte instanceof String) {
-			this.estiloArte = estiloArte;
+	public void setDescFunc(String descFunc) {
+		if (descFunc instanceof String) {
+			this.descFunc = descFunc;
 		} else {
 			throw new InputMismatchException();
 		}
@@ -60,7 +60,7 @@ public class Funcionario extends Pessoa implements IPessoa {
 
 	public void setCodigo(int codigo) {
 		if (codigo < 0)
-			throw new IllegalArgumentException("Codigo invalido !!");
+			throw new IllegalArgumentException("Código invalido !!");
 		else
 			this.codigo = codigo;
 	}
@@ -71,7 +71,7 @@ public class Funcionario extends Pessoa implements IPessoa {
 
 	public void setSalario(double salario) {
 		if (salario < 0)
-			throw new IllegalArgumentException("Salario invalido !!");
+			throw new IllegalArgumentException("Salário invalido !!");
 		else
 			this.salario = salario;
 	}

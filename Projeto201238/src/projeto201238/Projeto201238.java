@@ -19,7 +19,7 @@ public class Projeto201238 {
 		int opUsuario = 1;
 
 		while (opUsuario != 0) {
-			System.out.println("Bem-vindo ao COTIL-art! O que deseja fazer?\n\n"
+			System.out.println("Bem-vindo ao COTIL-Art! O que deseja fazer?\n\n"
 					+ "-> 0 - Sair\n"
 					+ "-> 1 - Cadastrar Cliente\n"
 					+ "-> 2 - Excluir cliente\n"
@@ -246,11 +246,11 @@ public class Projeto201238 {
 	}
 
 	private static void procurarProdutoTipo() {
-		System.out.println("Para realizar a busca, insira parte tipo da arte ");
+		System.out.println("Para realizar a busca, insira parte do tipo da arte ");
 		String arteIniciais = tec.next();
 
 		for (Produto p : listaProdutos) {
-			if (p.getNome().startsWith(arteIniciais)) {
+			if (p.getTipo().startsWith(arteIniciais)) {
 				p.exibir();
 			}
 		}
@@ -258,7 +258,7 @@ public class Projeto201238 {
 	}
 
 	private static void procurarProdutoPreco() {
-		System.out.println("Para realizar a busca digite o preco da arte: ");
+		System.out.println("Para realizar a busca digite o preço da arte: ");
 		double desenhoPreco = tec.nextDouble();
 
 		for (Produto p : listaProdutos) {
@@ -270,7 +270,7 @@ public class Projeto201238 {
 	}
 
 	private static void procurarProdutoDescricao() {
-		System.out.println("Para realizar a busca, digite, no minimo, parte da descricao da arte: ");
+		System.out.println("Para realizar a busca, digite, no minimo, parte da descrição da arte: ");
 		String desenhoIniciais = tec.next();
 		tec.nextLine();
 
@@ -312,23 +312,25 @@ public class Projeto201238 {
 		Produto produto = new Produto();
 
 		System.out.println("Digite o nome do produto.\n");
-		produto.setNome(tec.next());
-		tec.nextLine();
+		produto.setNome(tec.nextLine());
+		produto.setNome(tec.nextLine());
 
 		System.out.println("Digite a descrição do produto.\n");
 		produto.setDescricao(tec.nextLine());
 
-		while (produto.getCodigo() < 0) {
+		System.out.println("Digite o código do produto.\n");
 			try {
-				System.out.println("Digite o código do produto.\n");
 				produto.setCodigo(tec.nextInt());
+				if (produto.getCodigo() < 0) {
+					throw new IllegalArgumentException();
+				}
 				tec.nextLine();
-			} catch (IllegalArgumentException e) {
+			}catch (IllegalArgumentException e) {
 				System.out.println("Erro: Valor inválido para o código do produto.");
 			}finally {
 				tec.nextLine();
 			}
-		}
+		
 
 		System.out.println("Digite o nome do autor do produto: ");
 		produto.setAutor(tec.next());
@@ -410,15 +412,15 @@ public class Projeto201238 {
 
 		do {
 			try {
-				System.out.println("Digite o estilo favorito de arte do funcionário.\n");
-				funcionario.setEstiloArte(tec.next());
+				System.out.println("Dê uma breve descrição sobre o funcionário.\n");
+				funcionario.setDescFunc(tec.nextLine());
 				tec.nextLine();
 			} catch (InputMismatchException e) {
-				System.out.println("Erro: Estilo favorito de arte inválido.");
+				System.out.println("Erro: Descrição inválida.");
 			}finally {
 				tec.nextLine();
 			}
-		} while (!(funcionario.getEstiloArte() instanceof String));
+		} while (!(funcionario.getDescFunc() instanceof String));
 
 		while (funcionario.getCodigo() < 0) {
 			try {

@@ -69,7 +69,7 @@ public class Cliente extends Pessoa implements IPessoa {
 
 	public void setTelefone(int telefone) {
 		if (telefone < 0)
-			throw new IllegalArgumentException("Codigo invalido !!");
+			throw new IllegalArgumentException("Telefone invalido !!");
 		else
 			this.telefone = telefone;
 	}
