@@ -501,12 +501,12 @@ public class Projeto201238 {
 			}
 		}
 
-		while (cliente.getTelefone() < 0) {
+		while (cliente.getDividas() < 0) {
 			try {
-				System.out.println("Digite o número de telefone do cliente.");
-				cliente.setTelefone(tec.nextInt());
+				System.out.println("O cliente tem dívidas? Caso tenha, digite o número. Caso não tenha, digite 0.");
+				cliente.setDividas(tec.nextInt());
 			} catch (IllegalArgumentException e) {
-				System.out.println("Erro: Valor inválido para telefone.");
+				System.out.println("Erro: Valor inválido para dívidas");
 			}finally {
 				tec.nextLine();
 			}
