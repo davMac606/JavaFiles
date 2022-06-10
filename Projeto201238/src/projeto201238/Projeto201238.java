@@ -15,7 +15,6 @@ public class Projeto201238 {
 		menuCadastro();
 
 	}
-
 	private static void menuCadastro() {
 		int opUsuario = 1;
 
@@ -130,6 +129,7 @@ public class Projeto201238 {
 					break;
 				case 23:
 					System.out.println("Projeto desenvolvido por Davi Andrade Macedo. RA - 201238");
+					break;
 				default:
 					System.out.println("Opcao invalida !!");
 					break;
@@ -316,38 +316,60 @@ public class Projeto201238 {
 		tec.nextLine();
 
 		System.out.println("Digite a descrição do produto.\n");
-		produto.setDescricao(tec.next());
-		tec.nextLine();
+		produto.setDescricao(tec.nextLine());
 
 		while (produto.getCodigo() < 0) {
 			try {
 				System.out.println("Digite o código do produto.\n");
 				produto.setCodigo(tec.nextInt());
+				tec.nextLine();
 			} catch (IllegalArgumentException e) {
 				System.out.println("Erro: Valor inválido para o código do produto.");
+			}finally {
+				tec.nextLine();
 			}
 		}
 
-		System.out.println("Digite o nome do autor da obra: ");
+		System.out.println("Digite o nome do autor do produto: ");
 		produto.setAutor(tec.next());
 		tec.nextLine();
 
-		while (produto.getPreco() < 0) {
+
+	System.out.println("Digite o preço do produto.\n");
 			try {
+			produto.setPreco(tec.nextDouble());
+			while (produto.getPreco() < 0) {
+				
 				System.out.println("Digite o preço do produto.\n");
-				produto.setPreco(tec.nextDouble());
-			} catch (IllegalArgumentException e) {
-				System.out.println("Erro: O preço não pode ser negativo.");
-			}
+				throw new IllegalArgumentException();
+						}
+
+		} catch (IllegalArgumentException e) {
+			System.out.println("Erro: O preço não pode ser negativo.");
+		} finally {
+			tec.nextLine();
+		
+		}
+	
+			try {
+
+			produto.setPreco(tec.nextDouble());
+
+		} catch (IllegalArgumentException e) {
+			System.out.println("Erro: O preço não pode ser negativo.");
+		} finally {
+			tec.nextLine();
+		
 		}
 
 		do {
 			try {
 				System.out.println("Digite o estilo do produto(Desenho, colar, pulseira, etc).\n");
 				produto.setTipo(tec.next());
-				tec.nextLine();
 			} catch (InputMismatchException e) {
 				System.out.println("Erro: Valor inválido para o estilo da obra.");
+			}finally {
+				tec.nextLine();
 			}
 		} while (!(produto.getTipo() instanceof String));
 
@@ -393,6 +415,8 @@ public class Projeto201238 {
 				tec.nextLine();
 			} catch (InputMismatchException e) {
 				System.out.println("Erro: Estilo favorito de arte inválido.");
+			}finally {
+				tec.nextLine();
 			}
 		} while (!(funcionario.getEstiloArte() instanceof String));
 
@@ -402,6 +426,8 @@ public class Projeto201238 {
 				funcionario.setCodigo(tec.nextInt());
 			} catch (IllegalArgumentException e) {
 				System.out.println("Codigo invalido !!");
+			}finally {
+				tec.nextLine();
 			}
 		}
 
@@ -411,6 +437,8 @@ public class Projeto201238 {
 				funcionario.setSalario(tec.nextDouble());
 			} catch (InputMismatchException e) {
 				System.out.println("Erro: O salário não pode ser negativo.");
+			}finally {
+				tec.nextLine();
 			}
 		}
 
@@ -444,6 +472,8 @@ public class Projeto201238 {
 				cliente.setIdade(tec.nextInt());
 			} catch (IllegalArgumentException e) {
 				System.out.println("Erro: Valor inválido para idade.");
+			}finally {
+				tec.nextLine();
 			}
 		}
 
@@ -453,6 +483,8 @@ public class Projeto201238 {
 				cliente.setCodigo(tec.nextInt());
 			} catch (IllegalArgumentException e) {
 				System.out.println("Erro: Valor inválido para código.");
+			}finally {
+				tec.nextLine();
 			}
 		}
 
@@ -462,6 +494,8 @@ public class Projeto201238 {
 				cliente.setPedidos(tec.nextInt());
 			} catch (IllegalArgumentException e) {
 				System.out.println("ERRO: valor invalido para numero de pedidos.");
+			}finally {
+				tec.nextLine();
 			}
 		}
 
@@ -471,6 +505,8 @@ public class Projeto201238 {
 				cliente.setTelefone(tec.nextInt());
 			} catch (IllegalArgumentException e) {
 				System.out.println("Erro: Valor inválido para telefone.");
+			}finally {
+				tec.nextLine();
 			}
 		}
 
