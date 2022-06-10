@@ -270,7 +270,7 @@ public class Projeto201238 {
 	}
 
 	private static void procurarProdutoDescricao() {
-		System.out.println("Para realizar a busca, digite, no minimo, parte da descrição da arte: ");
+		System.out.println("Para realizar a busca, digite, no mínimo, parte da descrição da arte: ");
 		String desenhoIniciais = tec.next();
 		tec.nextLine();
 
@@ -379,7 +379,7 @@ public class Projeto201238 {
 	}
 
 	private static void excluirFuncionario() {
-		System.out.println("\nDigite o indice do funcionario que deseja excluir: ");
+		System.out.println("\nDigite o índice do funcionário que deseja excluir: ");
 		int indexFunc = tec.nextInt();
 
 		while (indexFunc > listaFuncionarios.size() || indexFunc < 0) {
