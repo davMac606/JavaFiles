@@ -61,7 +61,7 @@ public class Projeto201238 {
 				case 3:
 					for (Cliente c : listaClientes) {
 						c.exibir();
-						System.out.println("Indice do cliente: " + listaClientes.indexOf(c) + "\n");
+						System.out.println("índice do cliente: " + listaClientes.indexOf(c) + "\n");
 					}
 					break;
 				case 4:
@@ -73,7 +73,7 @@ public class Projeto201238 {
 				case 6:
 					for (Funcionario f : listaFuncionarios) {
 						f.exibir();
-						System.out.println("Indice do funcionario: " + listaFuncionarios.indexOf(f) + "\n");
+						System.out.println("índice do funcionario: " + listaFuncionarios.indexOf(f) + "\n");
 					}
 					break;
 				case 7:
@@ -85,7 +85,7 @@ public class Projeto201238 {
 				case 9:
 					for (Produto p : listaProdutos) {
 						p.exibir();
-						System.out.println("Indice do produto: " + listaProdutos.indexOf(p) + "\n");
+						System.out.println("índice do produto: " + listaProdutos.indexOf(p) + "\n");
 					}
 					break;
 				case 10:
@@ -152,7 +152,7 @@ public class Projeto201238 {
 			}
 		}
 
-		System.out.println("A Quantidade de produtos acima da media e: " + qtdProdutosAcimaMedia);
+		System.out.println("A Quantidade de produtos acima da média e: " + qtdProdutosAcimaMedia);
 	}
 
 	private static void exibirMediaPrecos() {
@@ -163,7 +163,7 @@ public class Projeto201238 {
 		}
 
 		mediaPrecos = mediaPrecos / listaProdutos.size();
-		System.out.println("A media de precos dos produtos e: " + mediaPrecos);
+		System.out.println("A média de preços dos produtos e: " + mediaPrecos);
 	}
 
 	private static void exibeProdutoMaisBarato() {
@@ -246,7 +246,7 @@ public class Projeto201238 {
 	}
 
 	private static void procurarProdutoTipo() {
-		System.out.println("Para realizar a busca, insira parte do tipo da arte ");
+		System.out.println("Para realizar a busca insira, no mínimo, parte do tipo da arte ");
 		String arteIniciais = tec.next();
 
 		for (Produto p : listaProdutos) {
@@ -294,12 +294,12 @@ public class Projeto201238 {
 	}
 
 	private static void excluirProduto() {
-		System.out.println("\nDigite o indice do produto que deseja excluir: ");
+		System.out.println("\nDigite o índice do produto que deseja excluir: ");
 		int indexProduto = tec.nextInt();
 
 		while (indexProduto > listaProdutos.size() || indexProduto < 0) {
-			System.out.println("Indice invalido !!");
-			System.out.println("Digite outro indice: ");
+			System.out.println("Índice inválido !!");
+			System.out.println("Digite outro índice: ");
 
 			indexProduto = tec.nextInt();
 		}
@@ -383,8 +383,8 @@ public class Projeto201238 {
 		int indexFunc = tec.nextInt();
 
 		while (indexFunc > listaFuncionarios.size() || indexFunc < 0) {
-			System.out.println("Indice invalido !!");
-			System.out.println("Digite outro indice: ");
+			System.out.println("índice invalido !!");
+			System.out.println("Digite outro índice: ");
 
 			indexFunc = tec.nextInt();
 		}
@@ -448,12 +448,12 @@ public class Projeto201238 {
 	}
 
 	private static void excluirCliente() {
-		System.out.println("\nDigite o indice do cliente que deseja excluir: ");
+		System.out.println("\nDigite o índice do cliente que deseja excluir: ");
 		int indexCliente = tec.nextInt();
 
 		while (indexCliente > listaClientes.size() || indexCliente < 0) {
-			System.out.println("Indice invalido !!");
-			System.out.println("Digite outro indice: ");
+			System.out.println("índice invalido !!");
+			System.out.println("Digite outro índice: ");
 
 			indexCliente = tec.nextInt();
 		}
