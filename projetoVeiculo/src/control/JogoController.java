@@ -38,7 +38,10 @@ public JogoController() {
      JogoDAO joDAO = new JogoDAO();
      return (joDAO.buscaJogos());
 }
-
+public ArrayList<Jogo> buscaJogo() throws SQLException {
+    JogoDAO joDAO = new JogoDAO();
+    return (joDAO.buscaPorNome());
+}
  public void excluirJogo(String nome) throws SQLException {
      JogoDAO joDAO = new JogoDAO();
      joDAO.excluir(nome);

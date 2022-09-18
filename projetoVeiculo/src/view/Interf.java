@@ -235,6 +235,7 @@ private JogoController joCtrl;
     int faixaEtaria = Integer.parseInt(txtPG.getText());
     String desenvolvedora = txtDev.getText();
     joCtrl.cadastrar(nome, genero, faixaEtaria, desenvolvedora);
+    btnBuscarActionPerformed(evt);
     }//GEN-LAST:event_btnCadastroActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -243,11 +244,12 @@ private JogoController joCtrl;
     }//GEN-LAST:event_formWindowOpened
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-    String nome = this.txtName.getText();
+    String nome = this.txtSelecionado.getText();
     try {
        joCtrl.excluirJogo(nome);
        JOptionPane.showMessageDialog(null, "Excluído com sucesso!");
-      
+      btnBuscarActionPerformed(evt);
+
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(null, "Não foi possível excluir o jogo.");
         System.out.println("Erro ao excluir aluno: " + ex.toString());
@@ -255,6 +257,8 @@ private JogoController joCtrl;
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        txtSelecionado.setVisible(true);
+        lblSelect.setVisible(true);
             ArrayList<Jogo> listaJogo;
             if (txtSelecionado.getText().equals("")) {
                 try {
@@ -263,18 +267,29 @@ private JogoController joCtrl;
                 dados.setNumRows(0);
                 for (Jogo jo: listaJogo) {
                     dados.addRow(new Object[]{jo.getNome(),jo.getGenero(),jo.getFaixaEtaria(),jo.getDesenvolvedora()});
-                    System.out.println(jo.getNome());
                 }
             } catch (SQLException ex) {
                 JOptionPane.showMessageDialog(null, "Não foi possível exibir jogos");
                 System.out.println("Erro ao buscar jogo: " + ex.toString());
             }
                     
-            }
+            } else {
+            try {
+                listaJogo = joCtrl.buscaJogo();
+                DefaultTableModel dados = (DefaultTableModel) tblDados.getModel();
+                dados.setNumRows(0);
+            for (Jogo jo: listaJogo) {
+                dados.addRow(new Object[]{jo.getNome(), jo.getGenero(), jo.getFaixaEtaria(), jo.getDesenvolvedora()});
+            }  
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Não foi possível exibir jogos");
+            System.out.println("Erro ao buscar jogo: " + ex.toString()); 
+        }
+    }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnBuscaGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaGeneroActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_btnBuscaGeneroActionPerformed
 
     /**
