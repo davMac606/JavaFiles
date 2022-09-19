@@ -259,8 +259,9 @@ private JogoController joCtrl;
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         txtSelecionado.setVisible(true);
         lblSelect.setVisible(true);
+        String nomeBusca = txtSelecionado.getText();
             ArrayList<Jogo> listaJogo;
-            if (txtSelecionado.getText().equals("")) {
+            if (nomeBusca.equals("")) {
                 try {
                 listaJogo = joCtrl.busca();
                 DefaultTableModel dados = (DefaultTableModel) tblDados.getModel();
@@ -274,17 +275,17 @@ private JogoController joCtrl;
             }
                     
             } else {
-            try {
-                listaJogo = joCtrl.buscaJogo();
-                DefaultTableModel dados = (DefaultTableModel) tblDados.getModel();
-                dados.setNumRows(0);
-            for (Jogo jo: listaJogo) {
-                dados.addRow(new Object[]{jo.getNome(), jo.getGenero(), jo.getFaixaEtaria(), jo.getDesenvolvedora()});
-            }  
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Não foi possível exibir jogos");
-            System.out.println("Erro ao buscar jogo: " + ex.toString()); 
-        }
+                try {
+           listaJogo = joCtrl.buscaJogo(nomeBusca);
+           DefaultTableModel dados = (DefaultTableModel) tblDados.getModel();
+           dados.setNumRows(0);
+           for (Jogo jo: listaJogo) {
+            dados.addRow(new Object[]{jo.getNome(),jo.getGenero(),jo.getFaixaEtaria(),jo.getDesenvolvedora()});
+           }
+                } catch (SQLException ex) {
+                    JOptionPane.showMessageDialog(null, "Não foi possível exibir jogos");
+                    System.out.println("Erro ao buscar jogo: " + ex.toString());
+                }
     }
     }//GEN-LAST:event_btnBuscarActionPerformed
 

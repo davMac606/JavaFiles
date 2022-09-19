@@ -51,20 +51,27 @@ public class JogoDAO {
     return listaJogo;
     }
     
-    public ArrayList<Jogo> buscaPorNome() throws SQLException {
+    public ArrayList<Jogo> buscaPorNome(String nomeJogo) throws SQLException {
         ResultSet rs;
         ArrayList<Jogo> listaJogo = new ArrayList();
         con = new Conexao().getConnection();
-        String sql = "SELECT * FROM JogoJava";
+        String sql = "SELECT * FROM JogoJava WHERE NOME like ?";
         PreparedStatement smt = con.prepareStatement(sql);
+        smt.setString(1, nomeJogo);
         rs = smt.executeQuery();
         while (rs.next()) {
             String nome = rs.getString("NOME");
+            String genero = rs.getString("GENERO");
+            int pg = rs.getInt("PG");
+            String desenvolvedora = rs.getString("DESENVOLVEDORA");
+            Jogo jo = new Jogo(nome, genero, pg, desenvolvedora);
+            listaJogo.add(jo);
         }
     smt.close();
     con.close();
     return listaJogo;
     }
+    
     
     public ArrayList<Jogo> buscaPG(int pg) throws SQLException {
         ResultSet rs;
