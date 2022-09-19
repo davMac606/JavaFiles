@@ -244,16 +244,16 @@ private JogoController joCtrl;
     }//GEN-LAST:event_formWindowOpened
 
     private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
-    String nome = this.txtSelecionado.getText();
+    String nomeLimpar = txtSelecionado.getText();
     try {
-       joCtrl.excluirJogo(nome);
+       joCtrl.excluirJogo(nomeLimpar);
        JOptionPane.showMessageDialog(null, "Excluído com sucesso!");
-      btnBuscarActionPerformed(evt);
 
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(null, "Não foi possível excluir o jogo.");
         System.out.println("Erro ao excluir aluno: " + ex.toString());
     }
+    btnBuscarActionPerformed(evt);
     }//GEN-LAST:event_btnLimparActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -261,7 +261,7 @@ private JogoController joCtrl;
         lblSelect.setVisible(true);
         String nomeBusca = txtSelecionado.getText();
             ArrayList<Jogo> listaJogo;
-            if (nomeBusca.equals("")) {
+            if (nomeBusca.startsWith("")) {
                 try {
                 listaJogo = joCtrl.busca();
                 DefaultTableModel dados = (DefaultTableModel) tblDados.getModel();
