@@ -3,7 +3,7 @@
 >Programa desenvolvido para o projeto da professora Tânia Basso, do Colégio Técnico de Limeira(COTIL).
 
 
->Desenvolvido por: Davi Andrade Macedo.
+>Desenvolvido por:.
 >Desenvolvimento iniciado em:31/05/2022.
 
 >Tânia eu imploro ignora o título dos commit.
